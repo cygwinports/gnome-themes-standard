@@ -1,0 +1,4 @@
+category: Gnome
+requires: gtk2.0-engines libcairo2 libglib2.0_0 libgtk3_0
+sdesc: "GNOME 3 Adwaita theme"
+ldesc: "Default theme for GNOME 3 applications"
