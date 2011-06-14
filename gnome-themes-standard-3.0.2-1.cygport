@@ -1,4 +1,0 @@
-inherit gnome2
-
-
-PATCH_URI="2.91.90.1-symbols.patch"
