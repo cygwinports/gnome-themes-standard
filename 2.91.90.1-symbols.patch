@@ -1,7 +1,0 @@
---- origsrc/gnome-themes-standard-2.91.90.1/src/engine.symbols	2011-01-19 08:10:58.000000000 -0600
-+++ src/gnome-themes-standard-2.91.90.1/src/engine.symbols	2011-03-04 04:28:21.897935600 -0600
-@@ -1,4 +1,3 @@
--g_module_check_init
- theme_init
- theme_exit
- create_engine
