@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="gnome-themes-standard"
-VERSION=3.8.3
+VERSION=3.8.4
 RELEASE=1
 CATEGORY="X11"
 REQUIRES="font-cantarell-otf gdk-pixbuf2.0-svg gnome-icon-theme gtk2.0-engines-pixmap"
