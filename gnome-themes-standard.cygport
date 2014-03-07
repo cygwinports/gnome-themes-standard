@@ -2,13 +2,16 @@ inherit gnome2
 
 NAME="gnome-themes-standard"
 VERSION=3.8.4
-RELEASE=1
+RELEASE=2
 CATEGORY="X11"
 REQUIRES="font-cantarell-otf gdk-pixbuf2.0-svg gnome-icon-theme gtk2.0-engines-pixmap"
 SUMMARY="GNOME 3 themes"
 DESCRIPTION="Default themes for GNOME 3 applications"
 
-PATCH_URI="3.0.2-vpath.patch"
+PATCH_URI="
+	3.0.2-vpath.patch
+	3.8.4-bgo712530.patch
+"
 
 DEPEND="gnome-common intltool
 	pkgconfig(gtk+-3.0)

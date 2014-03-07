@@ -1,0 +1,33 @@
+https://bugzilla.gnome.org/show_bug.cgi?id=712530
+
+--- origsrc/gnome-themes-standard-3.8.4/themes/Adwaita/gtk-3.0/adwaita_engine.c	2013-06-10 01:14:01.000000000 -0500
++++ src/gnome-themes-standard-3.8.4/themes/Adwaita/gtk-3.0/adwaita_engine.c	2014-03-06 22:14:00.845384500 -0600
+@@ -87,26 +87,14 @@ fallback_provider_remove (AdwaitaEngine
+ static void
+ fallback_provider_add (AdwaitaEngine *self)
+ {
+-  GFile *resource;
+   GtkCssProvider *provider;
+-  GError *error = NULL;
+   GdkScreen *screen;
+ 
+   if (self->fallback_provider != NULL)
+     return;
+ 
+-  resource = g_file_new_for_uri ("resource:///org/gnome/adwaita/gtk-fallback.css");
+-  provider = gtk_css_provider_new ();
+-  gtk_css_provider_load_from_file (provider, resource, &error);
+-  g_object_unref (resource);
+-
+-  if (error != NULL)
+-    {
+-      g_warning ("Can't load fallback CSS resource: %s", error->message);
+-      g_error_free (error);
+-      g_object_unref (provider);
+-      return;
+-    }
++  provider = gtk_css_provider_get_named("adwaita", "fallback");
++  g_object_ref(provider);
+ 
+   screen = gdk_screen_get_default ();
+   gtk_style_context_add_provider_for_screen
