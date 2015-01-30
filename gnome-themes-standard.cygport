@@ -2,7 +2,7 @@ inherit gnome2
 
 NAME="gnome-themes-standard"
 VERSION=3.14.2.3
-RELEASE=1
+RELEASE=2
 CATEGORY="X11"
 REQUIRES="font-cantarell-otf gdk-pixbuf2.0-svg adwaita-icon-theme gtk2.0-engines-pixmap"
 SUMMARY="GNOME 3 themes"
@@ -13,3 +13,15 @@ DISTCLEANFILES="themes/HighContrast/icons/Makefile"
 DEPEND="gnome-common intltool
 	pkgconfig(gtk+-3.0)
 	pkgconfig(librsvg-2.0)"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	dodir /usr/share/gtk-2.0
+	cat > ${D}/usr/share/gtk-2.0/gtkrc <<_EOF
+gtk-theme-name = "Adwaita"
+gtk-cursor-theme-name = "Adwaita"
+gtk-icon-theme-name = "Adwaita"
+_EOF
+}
