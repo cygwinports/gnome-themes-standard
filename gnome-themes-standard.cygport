@@ -1,8 +1,8 @@
 inherit gnome2
 
 NAME="gnome-themes-standard"
-VERSION=3.14.2.3
-RELEASE=2
+VERSION=3.18.0
+RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="Default GNOME themes"
 DESCRIPTION="Default theme sets for GNOME 3 applications"
@@ -10,11 +10,11 @@ DESCRIPTION="Default theme sets for GNOME 3 applications"
 DISTCLEANFILES="themes/HighContrast/icons/Makefile"
 
 DEPEND="gnome-common intltool
-	pkgconfig(gtk+-3.0)
+	pkgconfig(gtk+-2.0)
 	pkgconfig(librsvg-2.0)"
 
 PKG_NAMES="${NAME} adwaita-themes"
-gnome_themes_standard_REQUIRES="font-cantarell-otf adwaita-themes"
+gnome_themes_standard_REQUIRES="adwaita-themes"
 gnome_themes_standard_CONTENTS="
 	etc/postinstall/
 	usr/share/doc/
