@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="gnome-themes-standard"
-VERSION=3.18.0
+VERSION=3.22.2
 RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="Default GNOME themes"
@@ -17,6 +17,7 @@ PKG_NAMES="${NAME} adwaita-themes"
 gnome_themes_standard_REQUIRES="adwaita-themes"
 gnome_themes_standard_CONTENTS="
 	etc/postinstall/
+	etc/preremove/
 	usr/share/doc/
 	usr/share/icons/HighContrast/
 	usr/share/themes/HighContrast/
@@ -25,7 +26,7 @@ adwaita_themes_REQUIRES="adwaita-icon-theme gdk-pixbuf2.0-svg gtk2.0-engines-pix
 adwaita_themes_CONTENTS="
 	usr/lib/gtk-2.0/*/engines/cygadwaita.dll
 	usr/share/gtk-2.0/gtkrc
-	usr/share/themes/Adwaita/
+	usr/share/themes/Adwaita*/
 "
 
 src_install() {
